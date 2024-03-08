@@ -42,6 +42,7 @@ void checkInputName(char *name) {
             printf("\033[1;31m");
             printf("Invalid Player name. It must be < 30 characters and >=1 character and should not contain spaces.\n");
             printf("\033[0m");
+            printf("Enter your name again:");
             gets(name);
         } else {
             break;  // Exit the loop if the name is valid
@@ -57,6 +58,7 @@ void checkInputNumber(int *a)
         printf("\033[1;31m");
         printf("Invalid number. It must be 1000-9999\n");
         printf("\033[0m");
+        printf("Enter your number again:");
         scanf("%d",a);
     }
 }
@@ -70,6 +72,7 @@ void checkOption(char *a)
         printf("Invalid option. Enter your option again\n");
         printf("Press 'y' to continue.\nPress 'n' to exit.\nPress 'd' to see top 5 players\n");
         printf("\033[0m");
+        printf("enter your option again:");
         getc(stdin);
         scanf(" %c",a);
     }
@@ -80,7 +83,7 @@ void printComparisonResult(int a, int b) {
     if(a!=b)
     {
         unluck();
-        sleep(1);
+        sleep(0.2);
         tryAgain();
         sleep(1);
     }
