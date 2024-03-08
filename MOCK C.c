@@ -50,16 +50,38 @@ void checkInputName(char *name) {
     } while (1);
 }
 
-//Check number 
+
+void clearInputBuffer()
+{
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+//Check number
 void checkInputNumber(int *a)
 {
-    while (*a>9999||*a<1000)
+    while (1)
     {
-        printf("\033[1;31m");
-        printf("Invalid number. It must be 1000-9999\n");
-        printf("\033[0m");
-        printf("Enter your number again:");
-        scanf("%d",a);
+        printf("Enter your number: ");
+
+        if (scanf("%d", a) != 1)
+        {
+            printf("\033[1;31mInvalid number. It must be between 1000 and 9999 and dont have characters.\033[0m\n");
+
+            // Clear input buffer
+            clearInputBuffer();
+        }
+        else if (*a >= 1000 && *a <= 9999)
+        {
+            break;
+        }
+        else
+        {
+            printf("\033[1;31mInvalid number. It must be between 1000 and 9999 and dont have characters.\033[0m\n");
+
+            // Clear input buffer
+            clearInputBuffer();
+        }
     }
 }
 
@@ -102,7 +124,7 @@ void printComparisonResult(int a, int b) {
 
 //Function to load information of player into file
 void savePlayerToFile(Player *player) {
-    FILE *file = fopen("E:/cex/top2LuckyPlayer.txt", "a+");
+    FILE *file = fopen("E:/cex/top3LuckyPlayer.txt", "a+");
     if (file == NULL) {
         printf("Error opening file.\n");
         return;
@@ -114,7 +136,7 @@ void savePlayerToFile(Player *player) {
 
 //Function to read information from file and printf out top 5 players
 void findAndPrintTopPlayers() {
-    FILE *file = fopen("E:/cex/top2LuckyPlayer.txt", "r");
+    FILE *file = fopen("E:/cex/top3LuckyPlayer.txt", "r");
 
     if (file == NULL) {
         printf("Error opening file.\n");
@@ -190,11 +212,9 @@ int main() {
         
         // allow people enter number until have a right number
         do {
-            printf("Enter your number:   ");
-            scanf("%d",&newPlayer.guessedNumber);
-
+            // This function allow player input number and check 
             checkInputNumber(&newPlayer.guessedNumber);
-
+           
             incorrectEntriesCount++;
 
             printComparisonResult(randomNumber, newPlayer.guessedNumber);
