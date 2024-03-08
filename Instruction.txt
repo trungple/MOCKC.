@@ -1,0 +1,18 @@
+
+Enter the player's name.
+
+If the number of characters exceeds 30 or has space, an error will be notified, prompting the player to re-enter their name until they have the right name.
+Enter the guessed number.
+
+The guessed number must be in the range of 1000 to 9999. If the entered number falls outside this range, the program will notify an error and request re-entry.
+If the guessed number is incorrect, the program allows the player to enter a new number until the correct one is found.
+
+Once the player discovers the lucky number, the program will display the player's name, the lucky number, and the lucky ratio.
+
+The program will then prompt the player to choose whether to continue:
+
+Press 'y' to continue playing.
+Press 'n' to stop. 
+Press 'd' print out the top 5 players with the highest lucky ratios.
+
+If the player makes a choice that is not in the above table, the program will notify an error and let the user re-enter

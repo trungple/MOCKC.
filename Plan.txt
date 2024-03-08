@@ -1,0 +1,45 @@
+Saturday, Sunday (Research and Planning)
+
+- Study existing games to gain insights into various game mechanics.
+- Planning:
++ Identify the basic components of the program including entering names, generating random numbers, guessing numbers, compare and printing results.
++ Determine the algorithm to calculate the lucky ratio.
+- Can draw flow charts
+
+Monday 
+- Ask Mr Nhã for more details about requirements.
+
+Thursday (design)
+=> Rewrite the flow chart and start coding the first program based on the flow chart to meet the demand of customer.
+- Design the basic interface:
+Determine how to display player information and lucky ratio history.
+
+Format to show on screen when they have a wrong number: Unlucky. Try again.
+Then show the format:---- if the player doesn't have a matched number on each position.
+Or show the format: --right_number- if they have a right number at 3 position
+
+Format to show on screen when they have the right number: Right.
+Format to show top 5 players on screen: name_right number_Lucky ratio.
+
+Wednesday (development)
+
+Handle những trường hợp người chơi nhập sai: name, guessed number, option.
+
+enhance interface 
+by rewriting the output shown on the screen in 3D format
+
+Optimize code.
+
+Thursday (Testing )
+
+running the program and testing all functions in this game to confirm this game can be run accurately 
+
+Friday (Presentation)
+
+Create the instruction for the player.
+
+Prepare documents: Plant, code, ppt,...
+
+
+
+
