@@ -1,7 +1,7 @@
 
 Enter the player's name.
 
-If the number of characters exceeds 30 or has space, an error will be notified, prompting the player to re-enter their name until they have the right name.
+If the number of characters exceeds 30 or less than 1 character or has space, an error will be notified, prompting the player to re-enter their name until they have the right name.
 Enter the guessed number.
 
 The guessed number must be in the range of 1000 to 9999. If the entered number falls outside this range, the program will notify an error and request re-entry.
