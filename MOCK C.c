@@ -38,9 +38,9 @@ void checkInputName(char *name) {
             }
         }
 
-        if (stringLength > 30 || spaceCount > 0) {
+        if (stringLength > 30 || spaceCount > 0||stringLength==0) {
             printf("\033[1;31m");
-            printf("Invalid Player name. It must be less than 30 characters and should not contain spaces.\n");
+            printf("Invalid Player name. It must be < 30 characters and >=1 character and should not contain spaces.\n");
             printf("\033[0m");
             gets(name);
         } else {
@@ -64,7 +64,7 @@ void checkInputNumber(int *a)
 //Check option of player
 void checkOption(char *a)
 {
-    while((*a!='y')&&(*a!='n')&&(*a!='d'))
+    while((*a!='y')&&(*a!='n')&&(*a!='d')&&(*a!='D')&&(*a!='Y')&&(*a!='N'))
     {   
         printf("\033[1;31m");
         printf("Invalid option. Enter your option again\n");
@@ -99,7 +99,7 @@ void printComparisonResult(int a, int b) {
 
 //Function to load information of player into file
 void savePlayerToFile(Player *player) {
-    FILE *file = fopen("E:/cex/top1LuckyPlayer.txt", "a+");
+    FILE *file = fopen("E:/cex/top2LuckyPlayer.txt", "a+");
     if (file == NULL) {
         printf("Error opening file.\n");
         return;
@@ -111,7 +111,7 @@ void savePlayerToFile(Player *player) {
 
 //Function to read information from file and printf out top 5 players
 void findAndPrintTopPlayers() {
-    FILE *file = fopen("E:/cex/top1LuckyPlayer.txt", "r");
+    FILE *file = fopen("E:/cex/top2LuckyPlayer.txt", "r");
 
     if (file == NULL) {
         printf("Error opening file.\n");
@@ -215,12 +215,12 @@ int main() {
         
         checkOption(&userOption);
 
-        if(userOption=='n')
+        if(userOption=='n'||userOption=='N')
         {
             return 0;
         }
 
-        else if(userOption =='d')
+        else if(userOption =='d'||userOption=='D')
         {
             findAndPrintTopPlayers();
         }
@@ -229,7 +229,7 @@ int main() {
 
         }
         getc(stdin);
-    } while (userOption == 'y');
+    } while (userOption == 'y'||userOption=='Y');
     return 0;
 }
 
